@@ -32,3 +32,5 @@ Muudetavad sätted:
 * `FRAMERATE` - mängu värskendussagedus sekundites, vaikimisi `2.5`
 * `DEAD_CELL_CHAR` - märk surnud rakkude kuvamiseks, vaikimisi `' '`
 * `ALIVE_CELL_CHAR` - märk elusate rakkude kuvamiseks, vaikimis `'█'`
+* `WIDTH` - manuaalne mängulaua laius, vaikimisi `0`. Kui `0`, siis laius arvutatakse sisendi põhjal.
+* `HEIGHT` - manuaalne mängulaua kõrgus, vaikimisi `0`. Kui `0`, siis kõrgus arvutatakse sisendi põhjal.
