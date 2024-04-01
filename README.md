@@ -13,7 +13,7 @@ Elusad rakud märgi suvalise tähemärgiga, surnud rakud tühikutega.
 Tühja rea sisestamiseks sisesta vähemalt üks tühik ja vajuta ENTER.
 Mängu käivitamiseks sisesta tühja rea asemel ainult ENTER.
 
-Sisendi näide 7x5 mängulaua jaoks <E> märgib ENTER klahvi vajutamist:
+Sisendi näide 7x5 mängulaua jaoks, \<E> märgib ENTER klahvi vajutamist:
 ```plaintext
    x<E>     - 1
  x xx<E>    - 2
