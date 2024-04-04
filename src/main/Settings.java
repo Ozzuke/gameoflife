@@ -24,10 +24,10 @@ public class Settings {
             case "framerate":
                 this.setFramerate(Double.parseDouble(parts[1]));
                 break;
-            case "aliveChar":
+            case "alivechar":
                 this.setAliveChar(parts[1].charAt(0));
                 break;
-            case "deadChar":
+            case "deadchar":
                 this.setDeadChar(parts[1].charAt(0));
                 break;
             case "width":
@@ -40,13 +40,14 @@ public class Settings {
                 this.setFilename(parts[1]);
                 break;
             case "load":
-                int result = this.loadFromFile();
-                break;
+                return this.loadFromFile();
             case "save":
                 this.saveToFile();
                 break;
-
+            default:
+                return 1;
         }
+        return 0;
     }
 
     public int loadFromFile() {

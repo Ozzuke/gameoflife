@@ -47,11 +47,19 @@ public class Main {
                 break;
             }
             // Kui rida on seadete jaoks
+            boolean onSeade = false;
             for (String setting : settings.getPossibleSettings()) {
                 if (line.startsWith(setting)) {
-
+                    onSeade = true;
+                    int staatus = settings.changeSetting(line);
+                    System.out.println(staatus == 0 ? "Õnnestus" : "Viga");
+                    break;
                 }
             }
+            if (onSeade) {
+                continue;
+            }
+
         }
     }
 }
