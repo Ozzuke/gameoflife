@@ -5,6 +5,7 @@ public class Settings {
     private int width;
     private int height;
     private String filename;
+    private final String[] possibleSettings = {"framerate", "aliveChar", "deadChar", "width", "height", "filename", "load"};
 
     public Settings() {
         this.framerate = 2.5;
@@ -13,6 +14,15 @@ public class Settings {
         this.width = 0;
         this.height = 0;
         this.filename = "settings.txt";
+    }
+
+    public int loadFromFile() {
+        // TODO
+        return 0;
+    }
+
+    public void saveToFile() {
+        // TODO
     }
 
     public double getFramerate() {
@@ -50,5 +60,8 @@ public class Settings {
     }
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+    public String[] getPossibleSettings() {
+        return possibleSettings;
     }
 }
