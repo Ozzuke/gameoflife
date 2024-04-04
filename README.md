@@ -71,3 +71,17 @@ Klass, mis haldab mängu sätteid.
 
 #### Meetodid
 
+* `Settings()` - loob uued sätted vaikimisi väärtustega
+* `loadFromFile()` - laeb sätted failist
+* `saveToFile()` - salvestab sätted faili
+* `changeSetting(String line)` - muudab sätteid vastavalt sisendile
+* `listSettings()` - prindib sätted konsooli
+
+---
+
+## Projeḱti tegemise protsess
+
+Projekti tegemise protsessi käigus jagasime tööd kaheks: Osvald tegeles mängulaua ja selle uuendamise loomisega, Leo-Martin aga sätete haldamisega. Mõlemad töötasid eraldi failides, kuid kasutasid ühist mängulaua klassi. Kui mõlemad olid oma osa valmis saanud, ühendasime koodi ja tegime lõplikud parandused.
+
+## iga rühma liikme panus (sh tehtud klassid/meetodid) ja ajakulu(orienteeruvalt):
+
