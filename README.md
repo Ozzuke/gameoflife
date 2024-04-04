@@ -89,5 +89,26 @@ Klass, mis haldab mängu sätteid.
 
 Projekti tegemise protsessi käigus jagasime tööd kaheks: Osvald tegeles mängulaua ja selle uuendamise loomisega, Leo-Martin aga sätete haldamisega. Mõlemad töötasid eraldi failides, kuid kasutasid ühist mängulaua klassi. Kui mõlemad olid oma osa valmis saanud, ühendasime koodi ja tegime lõplikud parandused.
 
+---
+
 ## iga rühma liikme panus (sh tehtud klassid/meetodid) ja ajakulu(orienteeruvalt):
 
+Leo-Martin Pala: Settings klass, Settings meetodid, Settings klassi testid, Settings klassi dokumentatsioon
+Osvald Nigola: Map klass, Map meetod
+
+---
+
+## tegemise mured
+
+Mõlemad liikmed olid alguses hõivatud teiste projektidega, mistõttu ei saanud projekti kallal kohe tööd alustada. Kui töö alustati, siis oli keeruline leida aega, kus mõlemad saaksid koos töötada. Kuna mõlemad liikmed olid algajad Java kasutajad, siis oli keeruline mõista, kuidas klassid omavahel suhtlevad ja kuidas neid kasutada. Kui klassid olid valmis, siis oli keeruline neid ühendada ja teha lõplikud parandused.
+
+---
+
+## hinnang oma töö lõpptulemusele
+
+Oleme rahul oma töö lõpptulemusega, kuid oleksime tahtnud lisada mängulaua genereerimise juhuslikest väärtustest ja mängu salvestamise ja laadimise funktsionaalsuse. Arendamist vajab ka mängu kasutajaliides, mis on praegu väga lihtne.
+
+---
+## Testimine
+
+Testimiseks kasutasime JUnit raamistikku. Testisime mõlemat klassi eraldi, kasutades erinevaid sisendeid ja kontrollides väljundit. Testid olid edukad ja kõik meetodid töötasid ootuspäraselt.
