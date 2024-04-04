@@ -71,6 +71,7 @@ Klass, mis haldab mängulaua olekut ja selle uuendamist.
 * `update()` - uuendab mängulaua olekut vastavalt reeglitele
 * `fromString(String[] mapStrings)` - loob mängulaua oleku massiivist `mapStrings`
 * `nextStep(Map last)` - loob uue mängulaua oleku vastavalt reeglitele ja eelmisele olekule `last`
+
 ### Settings
 
 Klass, mis haldab mängu sätteid.
@@ -87,7 +88,10 @@ Klass, mis haldab mängu sätteid.
 
 ## Projeḱti tegemise protsess
 
-Projekti tegemise protsessi käigus jagasime tööd kaheks: Osvald tegeles mängulaua ja selle uuendamise loomisega, Leo-Martin aga sätete haldamisega. Mõlemad töötasid eraldi failides, kuid kasutasid ühist mängulaua klassi. Kui mõlemad olid oma osa valmis saanud, ühendasime koodi ja tegime lõplikud parandused.
+Projekti tegemise protsessi käigus jagasime tööd kaheks: 
+Osvald tegeles mängulaua ja selle uuendamise loomisega, Leo-Martin aga sätete haldamisega. 
+Mõlemad töötasid eraldi failides, kuid kasutasid ühist mängulaua klassi. 
+Kui mõlemad olid oma osa valmis saanud, ühendasime koodi ja tegime lõplikud parandused.
 
 ---
 
@@ -100,15 +104,22 @@ Osvald Nigola: Map klass, Map meetod
 
 ## tegemise mured
 
-Mõlemad liikmed olid alguses hõivatud teiste projektidega, mistõttu ei saanud projekti kallal kohe tööd alustada. Kui töö alustati, siis oli keeruline leida aega, kus mõlemad saaksid koos töötada. Kuna mõlemad liikmed olid algajad Java kasutajad, siis oli keeruline mõista, kuidas klassid omavahel suhtlevad ja kuidas neid kasutada. Kui klassid olid valmis, siis oli keeruline neid ühendada ja teha lõplikud parandused.
+Mõlemad liikmed olid alguses hõivatud teiste projektidega, mistõttu ei saanud projekti kallal kohe tööd alustada. 
+Kui töö alustati, siis oli keeruline leida aega, kus mõlemad saaksid koos töötada. 
+Kuna mõlemad liikmed olid algajad Java kasutajad, siis oli keeruline mõista, 
+kuidas klassid omavahel suhtlevad ja kuidas neid kasutada. 
+Kui klassid olid valmis, siis oli keeruline neid ühendada ja teha lõplikud parandused.
 
 ---
 
 ## hinnang oma töö lõpptulemusele
 
-Oleme rahul oma töö lõpptulemusega, kuid oleksime tahtnud lisada mängulaua genereerimise juhuslikest väärtustest ja mängu salvestamise ja laadimise funktsionaalsuse. Arendamist vajab ka mängu kasutajaliides, mis on praegu väga lihtne.
+Oleme rahul oma töö lõpptulemusega, kuid oleksime tahtnud lisada mängulaua genereerimise juhuslikest väärtustest 
+ja mängu salvestamise ja laadimise funktsionaalsuse. Arendamist vajab ka mängu kasutajaliides, mis on praegu väga lihtne.
 
 ---
 ## Testimine
 
-Testimiseks kasutasime JUnit raamistikku. Testisime mõlemat klassi eraldi, kasutades erinevaid sisendeid ja kontrollides väljundit. Testid olid edukad ja kõik meetodid töötasid ootuspäraselt.
+Testimiseks kasutasime JUnit raamistikku. 
+Testisime mõlemat klassi eraldi, kasutades erinevaid sisendeid ja kontrollides väljundit. 
+Testid olid edukad ja kõik meetodid töötasid ootuspäraselt.
