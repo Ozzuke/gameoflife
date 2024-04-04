@@ -1,3 +1,5 @@
+package main;
+
 public class Settings {
     private double framerate;
     private char aliveChar;
