@@ -11,13 +11,17 @@ System.out.print(String.format("\033[2J"));
 This is standard, but according to wikipedia the Windows console don't follow it.
 
 Have a look: http://www.termsys.demon.co.uk/vtansi.htm
+
+
+System.out.print("hello");
+        Thread.sleep(1000); // Just to give the user a chance to see "hello".
+        System.out.print("\b\b\b\b\b");
+        System.out.print("world");
  */
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        System.out.print("hello");
-        Thread.sleep(1000); // Just to give the user a chance to see "hello".
-        System.out.print("\b\b\b\b\b");
-        System.out.print("world");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Sisesta ükshaaval read (tühik surnud ruut, muu täht elus ruut, tühi rida lõpetab) või sätte mida muuta:");
     }
 }
