@@ -106,17 +106,14 @@ Osvald Nigola: Map klass, Map meetod
 ## tegemise mured
 
 Mõlemad liikmed olid alguses hõivatud teiste projektidega, mistõttu ei saanud projekti kallal kohe tööd alustada. 
-Kui töö alustati, siis oli keeruline leida aega, kus mõlemad saaksid koos töötada. 
-Kuna mõlemad liikmed olid algajad Java kasutajad, siis oli keeruline mõista, 
-kuidas klassid omavahel suhtlevad ja kuidas neid kasutada. 
-Kui klassid olid valmis, siis oli keeruline neid ühendada ja teha lõplikud parandused.
+Kui töö alustati, siis oli keeruline leida aega, kus mõlemad saaksid koos töötada. Kuid muidu sujus kõik hästi.
 
 ---
 
 ## hinnang oma töö lõpptulemusele
 
-Oleme rahul oma töö lõpptulemusega, kuid oleksime tahtnud lisada mängulaua genereerimise juhuslikest väärtustest 
-ja mängu salvestamise ja laadimise funktsionaalsuse. Arendamist vajab ka mängu kasutajaliides, mis on praegu väga lihtne.
+Oleme rahul oma töö lõpptulemusega, kuid oleksime tahtnud lisada mängulaua graafilise kasutajaliidese.
+Hästi on tehtud mängulaua suvalise oleku genereerimine.
 
 ---
 ## Testimine
