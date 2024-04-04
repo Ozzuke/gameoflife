@@ -30,9 +30,9 @@ public class Main {
         if (fail.exists()) {
             int result = settings.loadFromFile();
             if (result == 0) {
-                System.out.println("Seaded edukalt laetud");
+                System.out.println("Seaded edukalt failist laetud");
             } else {
-                System.out.println("Seadete laadimine ebaõnnestus");
+                System.out.println("Seadete automaatne laadimine ebaõnnestus");
             }
         }
 
@@ -41,7 +41,13 @@ public class Main {
         int width = 0;
         int height = 0;
         boolean random = false;
-        System.out.println("Sisesta ükshaaval read (tühik surnud ruut, muu täht elus ruut, tühi rida lõpetab) või säte mida muuta:");
+        System.out.println("Tere tulemast!");
+        System.out.println("Seadete kuvamiseks kirjuta 'LIST', seadeid saab muuta kujul 'SEADE:VÄÄRTUS'");
+        System.out.println("Seadete laadimiseks failist kirjuta 'LOAD' ja salvestamiseks 'SAVE'");
+        System.out.println("Mängulaua loomiseks kirjuta selle read, surnud ruudu jaoks tühik ja elava ruudu jaoks mõni muu sümbol");
+        System.out.println("Loodud lauaga mängu alustamiseks sisesta lõpuks tühi rida (ka ilma tühikuteta)");
+        System.out.println("Kui soovid juhuslikku mängulauda, kirjuta 'RANDOM'");
+        System.out.println("Käimas oleva mängu lõpetamiseks vajuta ENTER");
         while (true) {
             String line = sc.nextLine();
             line = line.toLowerCase();
