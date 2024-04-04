@@ -112,6 +112,6 @@ Ei esinenud suuremaid muresid peale kehva ajaplaneerimise, mistõttu lõpetasime
 Tulemusega võib päris rahul olla, kuid üksikud viimistlused jäid siiski tegemata, kuna ei osanud aega piisavalt hästi planeerida.
 
 ---
-## Testimine
+## Testimine 
 
 Testimiseks lõime Maven projekti, kus kasutasime JUnit 5 raamistikku. Testid on kirjutatud klassidele Map ja Seaded.
