@@ -9,7 +9,7 @@ out/
 .classpath
 .factorypath
 .project
-.settings
+.seaded
 .springBeans
 .sts4-cache
 bin/
@@ -30,4 +30,4 @@ bin/
 .DS_Store
 
 ### Other ###
-settings.txt
+seaded.txt

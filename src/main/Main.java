@@ -18,17 +18,17 @@ Have a look: http://www.termsys.demon.co.uk/vtansi.htm
 
 
 System.out.print("hello");
-        Thread.sleep(1000); // Just to give the user a chance to see "hello".
+        Thread.sleep(1000); // Just to give the user a võimalus to see "hello".
         System.out.print("\b\b\b\b\b");
         System.out.print("world");
  */
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
-        Settings settings = new Settings();
-        File fail = new File(settings.getFilename());
+        Seaded seaded = new Seaded();
+        File fail = new File(seaded.getFailinimi());
         if (fail.exists()) {
-            int result = settings.loadFromFile();
+            int result = seaded.laeFailist();
             if (result == 0) {
                 System.out.println("Seaded edukalt failist laetud");
             } else {
@@ -38,8 +38,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String mapString = "";
-        int width = 0;
-        int height = 0;
+        int laius = 0;
+        int pikkus = 0;
         boolean random = false;
         System.out.println("Tere tulemast!");
         System.out.println("Seadete kuvamiseks kirjuta 'LIST', seadeid saab muuta kujul 'SEADE:VÄÄRTUS'");
@@ -56,10 +56,11 @@ public class Main {
             }
             // Kui rida on seadete jaoks
             boolean onSeade = false;
-            for (String setting : settings.getPossibleSettings()) {
+            for (String setting : seaded.getVõimalikudSeaded()) {
+                setting = setting.toLowerCase();
                 if (line.startsWith(setting)) {
                     onSeade = true;
-                    int staatus = settings.changeSetting(line);
+                    int staatus = seaded.muudaSätte(line);
                     System.out.println(staatus == 0 ? "Õnnestus" : "Viga");
                     break;
                 }
@@ -73,38 +74,38 @@ public class Main {
                 break;
             }
 
-            if (line.length() > width) {
-                width = line.length();
+            if (line.length() > laius) {
+                laius = line.length();
             }
-            height++;
+            pikkus++;
             mapString = mapString + line + "\n";
         }
-        if ((width == 0 || height == 0) && !random) {
+        if ((laius == 0 || pikkus == 0) && !random) {
             System.out.println("Viga: kaart on tühi");
             return;
         }
         if (random) {
-            width = 20;
-            height = 10;
+            laius = 20;
+            pikkus = 10;
         }
-        if (settings.getWidth() > width) {
-            width = settings.getWidth();
+        if (seaded.getLaius() > laius) {
+            laius = seaded.getLaius();
         }
-        if (settings.getHeight() > height) {
-            height = settings.getHeight();
+        if (seaded.getKõrgus() > pikkus) {
+            pikkus = seaded.getKõrgus();
         }
 
-        Map map = new Map(width, height);
+        Map map = new Map(laius, pikkus);
         if (random) {
-            map.randomize(settings.getChance());
+            map.randomize(seaded.getVõimalus());
         } else {
-            map.fromString(mapString);
+            map.olekSõnest(mapString);
         }
         while (System.in.available() == 0) {
-            map.printMap(settings.getAliveChar(), settings.getDeadChar());
-            map.update();
-            Thread.sleep((long) (1000 / settings.getFramerate()));
-            System.out.println("-".repeat(width));
+            map.printMap(seaded.getelusTäht(), seaded.getsurnudTäht());
+            map.värskenda();
+            Thread.sleep((long) (1000 / seaded.getKaadrisagedus()));
+            System.out.println("-".repeat(laius));
             System.out.print("\033[H\033[2J");
             System.out.flush();
         }

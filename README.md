@@ -46,7 +46,7 @@ Muudetavad sätted:
 * `WIDTH` - manuaalne mängulaua laius, vaikimisi `0`. Kui `0`, siis laius arvutatakse sisendi põhjal.
 * `HEIGHT` - manuaalne mängulaua kõrgus, vaikimisi `0`. Kui `0`, siis kõrgus arvutatakse sisendi põhjal.
 * `CHANCE` - elusate rakkude tõenäosus algseisus käsu `RANDOM` puhul, vaikimisi `0.5
-* `FILENAME` - faili nimi, millest lugeda seaded, vaikimisi `settings.txt`
+* `FILENAME` - faili nimi, millest lugeda seaded, vaikimisi `seaded.txt`
 
 Käsklused:
 
@@ -58,31 +58,32 @@ Käsklused:
 
 ## Klassid
 
-siin me kirjeldame klasside funktsionaalsust
+Siin on kirjeldatud kasutusel olevaid klasse
 
 ### Map
 
-Klass, mis haldab mängulaua olekut ja selle uuendamist.
+Klass, mis haldab mängulaua olekut ja selle uuenemist. Mängulaud on BitSet, kus iga bit tähistab ühe ruudu olekut.
 
 #### Meetodid
 
-* `Map(int width, int height)` - loob uue mängulaua laiuse ja kõrgusega `width` ja `height`
-* `printMap(char aliveChar, char deadChar)` - prindib mängulaua konsooli, kasutades `aliveChar` ja `deadChar` vastavalt elusate ja surnud rakkude märgistamiseks
-* `update()` - uuendab mängulaua olekut vastavalt reeglitele
-* `fromString(String[] mapStrings)` - loob mängulaua oleku massiivist `mapStrings`
+* `Map(int laius, int pikkus)` - loob uue mängulaua laiuse ja kõrgusega `laius` ja `pikkus`
+* `printMap(char elusTäht, char surnudTäht)` - väljastab mängulaua oleku loetaval kujul, 
+kasutades `elusTäht` ja `surnudTäht` vastavalt elusate ja surnud rakkude märgistamiseks
+* `värskenda()` - uuendab mängulaua olekut vastavalt reeglitele
+* `olekSõnest(String mapStrings)` - loob mängulaua oleku massiivist `mapStrings`
 * `nextStep(Map last)` - loob uue mängulaua oleku vastavalt reeglitele ja eelmisele olekule `last`
 
-### Settings
+### Seaded
 
 Klass, mis haldab mängu sätteid.
 
 #### Meetodid
 
-* `Settings()` - loob uued sätted vaikimisi väärtustega
-* `loadFromFile()` - laeb sätted failist
-* `saveToFile()` - salvestab sätted faili
-* `changeSetting(String line)` - muudab sätteid vastavalt sisendile
-* `listSettings()` - prindib sätted konsooli
+* `Seaded()` - loob uued sätted vaikimisi väärtustega
+* `laeFailist()` - laeb sätted failist
+* `salvestaFaili()` - salvestab sätted faili
+* `muudaSätte(String line)` - muudab sätteid vastavalt sisendile
+* `listSeaded()` - prindib sätted konsooli
 
 ---
 
@@ -97,7 +98,7 @@ Kui mõlemad olid oma osa valmis saanud, ühendasime koodi ja tegime lõplikud p
 
 ## iga rühma liikme panus (sh tehtud klassid/meetodid) ja ajakulu(orienteeruvalt):
 
-Leo-Martin Pala: Settings klass, Settings meetodid, Settings klassi testid, Settings klassi dokumentatsioon
+Leo-Martin Pala: Seaded klass, Seaded meetodid, Seaded klassi testid, Seaded klassi dokumentatsioon
 Osvald Nigola: Map klass, Map meetod
 
 ---

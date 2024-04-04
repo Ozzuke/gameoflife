@@ -3,38 +3,38 @@ package main;
 import java.util.BitSet;
 
 public class Map {
-    private final int width;
-    private final int height;
+    private final int laius;
+    private final int pikkus;
     private BitSet map;
 
-    public Map(int width, int height) {
-        this.width = width;
-        this.height = height;
-        this.map = new BitSet(width * height);
+    public Map(int laius, int pikkus) {
+        this.laius = laius;
+        this.pikkus = pikkus;
+        this.map = new BitSet(laius * pikkus);
     }
 
-    public int getWidth() {
-        return width;
+    public int getLaius() {
+        return laius;
     }
-    public int getHeight() {
-        return height;
+    public int getKõrgus() {
+        return pikkus;
     }
 
     public void setAlive(int x, int y) {
-        map.set(y * width + x);
+        map.set(y * laius + x);
     }
     public void setDead(int x, int y) {
-        map.clear(y * width + x);
+        map.clear(y * laius + x);
     }
     public boolean isAlive(int x, int y) {
-        return map.get(y * width + x);
+        return map.get(y * laius + x);
     }
 
-    public void printMap(char aliveChar, char deadChar) {
+    public void printMap(char elusTäht, char surnudTäht) {
         StringBuilder sb = new StringBuilder();
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                sb.append(isAlive(x, y) ? aliveChar : deadChar);
+        for (int y = 0; y < pikkus; y++) {
+            for (int x = 0; x < laius; x++) {
+                sb.append(isAlive(x, y) ? elusTäht : surnudTäht);
             }
             sb.append('\n');
         }
@@ -42,10 +42,10 @@ public class Map {
     }
 
     public static Map nextStep(Map last) {
-        Map next = new Map(last.getWidth(), last.getHeight());
+        Map next = new Map(last.getLaius(), last.getKõrgus());
         // Kõik uued ruudud läbi käia
-        for (int y = 0; y < last.getHeight(); y++) {
-            for (int x = 0; x < last.getWidth(); x++) {
+        for (int y = 0; y < last.getKõrgus(); y++) {
+            for (int x = 0; x < last.getLaius(); x++) {
                 int aliveNeighbours = 0;
                 // Kõik naaberruudud läbi käia
                 for (int dy = -1; dy <= 1; dy++) {
@@ -57,7 +57,7 @@ public class Map {
                         // Naaberruudu koordinaadid
                         int nx = x + dx;
                         int ny = y + dy;
-                        if (nx < 0 || nx >= last.getWidth() || ny < 0 || ny >= last.getHeight()) {
+                        if (nx < 0 || nx >= last.getLaius() || ny < 0 || ny >= last.getKõrgus()) {
                             // Veenduda, et naaberruut on kaardil
                             continue;
                         }
@@ -80,13 +80,13 @@ public class Map {
         return next;
     }
 
-    public void update() {
+    public void värskenda() {
         this.map = nextStep(this).map;
     }
 
-    public void randomize(double chance) {
-        for (int i = 0; i < width * height; i++) {
-            if (Math.random() < chance) {
+    public void randomize(double võimalus) {
+        for (int i = 0; i < laius * pikkus; i++) {
+            if (Math.random() < võimalus) {
                 map.set(i);
             } else {
                 map.clear(i);
@@ -94,7 +94,7 @@ public class Map {
         }
     }
 
-    public void fromString(String mapString) {
+    public void olekSõnest(String mapString) {
         int x = 0;
         int y = 0;
         for (char c : mapString.toCharArray()) {
