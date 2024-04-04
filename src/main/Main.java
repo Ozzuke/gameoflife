@@ -1,6 +1,7 @@
 package main;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 /*
 You could use cursor up to delete a line, and erase text, or simply overwrite with the old text with new text.
@@ -23,7 +24,7 @@ System.out.print("hello");
  */
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         Settings settings = new Settings();
         File fail = new File(settings.getFilename());
         if (fail.exists()) {
@@ -60,6 +61,31 @@ public class Main {
                 continue;
             }
 
+            if (line.length() > width) {
+                width = line.length();
+            }
+            height++;
+            mapString = mapString + line + "\n";
+        }
+        if (width == 0 || height == 0) {
+            System.out.println("Viga: kaart on tühi");
+            return;
+        }
+        if (settings.getWidth() > width) {
+            width = settings.getWidth();
+        }
+        if (settings.getHeight() > height) {
+            height = settings.getHeight();
+        }
+
+        Map map = new Map(width, height);
+        map.fromString(mapString);
+        while (System.in.available() == 0) {
+            map.printMap(settings.getAliveChar(), settings.getDeadChar());
+            map.update();
+            Thread.sleep((long) (1000 / settings.getFramerate()));
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
         }
     }
 }

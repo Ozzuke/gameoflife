@@ -12,6 +12,7 @@ Read sisesta ükshaaval, iga rea sisestamise järel vajuta ENTER.
 Elusad rakud märgi suvalise tähemärgiga, surnud rakud tühikutega.
 Tühja rea sisestamiseks sisesta vähemalt üks tühik ja vajuta ENTER.
 Mängu käivitamiseks sisesta tühja rea asemel ainult ENTER.
+Mängu lõpetamiseks käimise ajal vajuta ENTER.
 
 Sisendi näide 7x5 mängulaua jaoks, \<E> märgib ENTER klahvi vajutamist:
 ```plaintext
