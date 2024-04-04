@@ -40,6 +40,7 @@ public class Main {
         String mapString = "";
         int width = 0;
         int height = 0;
+        boolean random = false;
         System.out.println("Sisesta ükshaaval read (tühik surnud ruut, muu täht elus ruut, tühi rida lõpetab) või säte mida muuta:");
         while (true) {
             String line = sc.nextLine();
@@ -61,15 +62,24 @@ public class Main {
                 continue;
             }
 
+            if (line.startsWith("random")) {
+                random = true;
+                break;
+            }
+
             if (line.length() > width) {
                 width = line.length();
             }
             height++;
             mapString = mapString + line + "\n";
         }
-        if (width == 0 || height == 0) {
+        if ((width == 0 || height == 0) && !random) {
             System.out.println("Viga: kaart on tühi");
             return;
+        }
+        if (random) {
+            width = 20;
+            height = 10;
         }
         if (settings.getWidth() > width) {
             width = settings.getWidth();
@@ -79,11 +89,16 @@ public class Main {
         }
 
         Map map = new Map(width, height);
-        map.fromString(mapString);
+        if (random) {
+            map.randomize(settings.getChance());
+        } else {
+            map.fromString(mapString);
+        }
         while (System.in.available() == 0) {
             map.printMap(settings.getAliveChar(), settings.getDeadChar());
             map.update();
             Thread.sleep((long) (1000 / settings.getFramerate()));
+            System.out.println("-".repeat(width));
             System.out.print("\033[H\033[2J");
             System.out.flush();
         }

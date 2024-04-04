@@ -12,8 +12,9 @@ public class Settings {
     private char deadChar;
     private int width;
     private int height;
+    private double chance;
     private String filename;
-    private final String[] possibleSettings = {"framerate", "alivechar", "deadchar", "width", "height", "filename", "load", "save", "list"};
+    private final String[] possibleSettings = {"framerate", "alivechar", "deadchar", "width", "height", "chance", "filename", "load", "save", "list"};
 
     public Settings() {
         this.framerate = 2.5;
@@ -21,8 +22,10 @@ public class Settings {
         this.deadChar = ' ';
         this.width = 0;
         this.height = 0;
+        this.chance = 0.5;
         this.filename = "settings.txt";
     }
+
 
     public int changeSetting(String line) throws FileNotFoundException {
         String[] parts = line.split(":");
@@ -41,6 +44,9 @@ public class Settings {
                 break;
             case "height":
                 this.setHeight(Integer.parseInt(parts[1]));
+                break;
+            case "chance":
+                this.setChance(Double.parseDouble(parts[1]));
                 break;
             case "filename":
                 this.setFilename(parts[1]);
@@ -85,6 +91,7 @@ public class Settings {
             pw.println("deadchar:" + this.getDeadChar());
             pw.println("width:" + this.getWidth());
             pw.println("height:" + this.getHeight());
+            pw.println("chance:" + this.getChance());
             pw.close();
         } catch (IOException e) {
             System.err.println("Viga seadete salvestamisel: " + e.getMessage());
@@ -99,6 +106,7 @@ public class Settings {
         System.out.println("deadchar: " + this.getDeadChar());
         System.out.println("width: " + this.getWidth());
         System.out.println("height: " + this.getHeight());
+        System.out.println("chance: " + this.getChance());
         System.out.println("filename: " + this.getFilename());
     }
 
@@ -140,6 +148,14 @@ public class Settings {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public double getChance() {
+        return chance;
+    }
+
+    public void setChance(double chance) {
+        this.chance = chance;
     }
 
     public String getFilename() {

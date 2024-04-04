@@ -31,12 +31,14 @@ public class Map {
     }
 
     public void printMap(char aliveChar, char deadChar) {
+        StringBuilder sb = new StringBuilder();
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                System.out.print(isAlive(x, y) ? aliveChar : deadChar);
+                sb.append(isAlive(x, y) ? aliveChar : deadChar);
             }
-            System.out.println();
+            sb.append('\n');
         }
+        System.out.print(sb.toString());
     }
 
     public static Map nextStep(Map last) {
@@ -80,6 +82,16 @@ public class Map {
 
     public void update() {
         this.map = nextStep(this).map;
+    }
+
+    public void randomize(double chance) {
+        for (int i = 0; i < width * height; i++) {
+            if (Math.random() < chance) {
+                map.set(i);
+            } else {
+                map.clear(i);
+            }
+        }
     }
 
     public void fromString(String mapString) {
