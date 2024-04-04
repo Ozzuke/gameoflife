@@ -34,3 +34,9 @@ Muudetavad sätted:
 * `ALIVE_CELL_CHAR` - märk elusate rakkude kuvamiseks, vaikimis `'█'`
 * `WIDTH` - manuaalne mängulaua laius, vaikimisi `0`. Kui `0`, siis laius arvutatakse sisendi põhjal.
 * `HEIGHT` - manuaalne mängulaua kõrgus, vaikimisi `0`. Kui `0`, siis kõrgus arvutatakse sisendi põhjal.
+* `FILENAME` - faili nimi, millest lugeda seaded, vaikimisi `settings.txt`
+
+Käsklused:
+
+* `LOAD` - lae seaded failist (toimub automaatselt programmi käivitamisel kuid saab ka käsitsi käivitada peale faili nime muutmist)
+* `SAVE` - salvesta seaded faili
